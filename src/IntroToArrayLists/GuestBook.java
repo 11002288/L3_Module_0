@@ -14,8 +14,7 @@ public class GuestBook implements ActionListener {
 		// Create a GUI with two buttons. One button reads "Add Name" and the other
 		// button reads "View Names".
 		GuestBook gb = new GuestBook();
-		ArrayList<String> people = new ArrayList<String>();
-		people.add(name);
+		
 	}
 	// When the add name button is clicked, display an input dialog that asks the
 	// user to enter a name. Add
@@ -32,7 +31,7 @@ public class GuestBook implements ActionListener {
 	JPanel panel = new JPanel();
 	JButton button = new JButton();
 	JButton autton = new JButton();
-
+	ArrayList<String> people = new ArrayList<String>();
 	GuestBook() {
 		frame.add(panel);
 		panel.add(button);
@@ -50,11 +49,19 @@ public class GuestBook implements ActionListener {
 		// TODO Auto-generated method stub
 		if (button == e.getSource()) {
 			String name = JOptionPane.showInputDialog("Would you like to add a name");
+			people.add(name);
 		}
 		if (autton == e.getSource()) {
-			ArrayList<String> people = new ArrayList<String>();
 			String name = null;
-			people.add(name);
+			for (int i = people.size()-1 ; i >=  0; i--) {
+			String Guest = people.get(i);
+				System.out.println(Guest);
+			}
+			
+			
+			
+			
+		
 		}
 	}
 }
