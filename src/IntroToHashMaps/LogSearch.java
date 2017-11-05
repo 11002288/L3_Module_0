@@ -1,6 +1,53 @@
 package IntroToHashMaps;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.util.HashMap;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 public class LogSearch {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton button = new JButton();
+	JButton autton = new JButton();
+	JButton cutton = new JButton();	
+	JButton dutton = new JButton();	
+	public static void main(String[] args) {
+	
+		HashMap<String, String> search = new HashMap<String, String>();
+	
+		  String Name = JOptionPane.showInputDialog("enter a name");
+		 String number = JOptionPane.showInputDialog("Enter a number");
+		int num = Integer.parseInt(number);
+		search.put(number, Name);
+				}
+
+	 void createUI(){
+		System.out.println("test");
+			 frame.add(panel);
+				panel.add(button);
+				panel.add(autton);
+				button.setText("Add Entry");
+				frame.setSize(200, 200);
+				frame.setVisible(true);
+				button.addActionListener((ActionListener) this);
+		 }	
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (button == e.getSource()) {
+			String name = JOptionPane.showInputDialog("Would you like to add a name");
+			
+		}
+
+
+	}}
+	
+
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
@@ -28,4 +75,4 @@ public class LogSearch {
 	 * 				is not in the list. 
 	 *
 	 * */
-}
+
