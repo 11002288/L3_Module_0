@@ -22,7 +22,7 @@ public class IntroToStack {
 		
 		//4. Pop all the elements off of the Stack. Every time a double is popped that is
 		//   between the two numbers entered by the user, print it to the screen.
-		System.out.println("The numbers inbetween " + number + "are:");
+		System.out.println("The numbers inbetween " + number + " are:");
 		//   EXAMPLE:
 		//   NUM 1: 65
 		//   NUM 2: 75
