@@ -17,7 +17,7 @@ public class LogSearch implements ActionListener {
 	JButton autton = new JButton();
 	JButton cutton = new JButton();
 	JButton dutton = new JButton();
-	HashMap<String, String> search = new HashMap<String, String>();
+	HashMap<Integer, String> search = new HashMap<Integer, String>();
 
 	public static void main(String[] args) {
 		LogSearch ls = new LogSearch();
