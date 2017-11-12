@@ -2,7 +2,6 @@ package IntroToHashMaps;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -26,16 +25,21 @@ public class LogSearch implements ActionListener {
 	}
 
 	void createUI() {
-		System.out.println("test");
 		frame.add(panel);
 		panel.add(button);
 		panel.add(autton);
 		panel.add(cutton);
+		panel.add(dutton);
 		button.setText("Add Entry");
+		autton.setText("Existing People");
+		cutton.setText("List of Existing");
+		dutton.setText("Delete Entry");
 		frame.setSize(200, 200);
 		frame.setVisible(true);
 		button.addActionListener(this);
 		autton.addActionListener(this);
+		cutton.addActionListener(this);
+		dutton.addActionListener(this);
 	}
 
 	@Override
@@ -46,15 +50,33 @@ public class LogSearch implements ActionListener {
 			String name = JOptionPane.showInputDialog("Would you like to add a name");
 			String number = JOptionPane.showInputDialog("Enter a number");
 			int num = Integer.parseInt(number);
-			search.put(number, name);
+			search.put(num, name);
 		}
 		if (autton == e.getSource()) {
 			String ID = JOptionPane.showInputDialog("Enter ID Number of Existing Members");
 			int you = Integer.parseInt(ID);
-			
-			JOptionPane.showConfirmDialog(null, search.get(you));
+			if (search.containsKey(you)) {
+				JOptionPane.showConfirmDialog(null, search.get(you));
+			} else {
+				JOptionPane.showConfirmDialog(null, "Does not Exist");
+			}
+		}
+		if (cutton == e.getSource()) {
+			for (Integer i : search.keySet()) {
+				JOptionPane.showConfirmDialog(null, "ID: " + i + " Name: " + search.get(i));
+			}
+		}
+		if (dutton == e.getSource()) {
+			String Delete = JOptionPane.showInputDialog("Enter ID #");
+			int gone = Integer.parseInt(Delete);
+			if (search.containsKey(gone)) {
+				search.remove(gone);
+			} else {
+				JOptionPane.showConfirmDialog(null, "Does not Exist");
+			}
 		}
 	}
+
 }
 
 /*
