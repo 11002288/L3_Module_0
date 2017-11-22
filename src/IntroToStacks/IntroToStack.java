@@ -1,5 +1,6 @@
 package IntroToStacks;
 
+import java.awt.Component;
 import java.util.Random;
 import java.util.Stack;
 
@@ -9,10 +10,10 @@ public class IntroToStack {
 	public static void main(String[] args) {
 		// 1. Create a Stack of Doubles
 		// Don't forget to import the Stack class
-
+		Stack<Double> name = new Stack<Double>();
 		// 2. Use a loop to push 100 random doubles between 0 and 100 to the Stack.
 		for (int i = 0; i < 101; i++) {
-			Stack<Double> name = new Stack<Double>();
+			
 			Random ran = new Random();
 			Double dubstep = ran.nextDouble() * 100;
 			name.push(dubstep);
@@ -25,6 +26,7 @@ public class IntroToStack {
 		// 4. Pop all the elements off of the Stack. Every time a double is popped that
 		// is
 		// between the two numbers entered by the user, print it to the screen.
+		int what = name.size();
 		System.out.println("Num 1: " + num1);
 		System.out.println("Num 2: " + num2);
 		if (number2 >= number1) {
@@ -32,12 +34,15 @@ public class IntroToStack {
 		} else {
 			System.out.println("Popping off Stack Elements between " + num2 + " and " + num1);
 		}
+		for (int i = 0; i < what; i++) {
+		double la = name.pop();
+		if (la >= number1 && la <= number2) {
+		System.out.println(la);
+		}
+		}
 		// EXAMPLE:
 		// NUM 1: 65
 		// NUM 2: 75
-		// if (num1<=num) {
-
-		// }
 		// Popping elements off stack...
 		// Elements between 65 and 75:
 		// 66.66876846

@@ -1,9 +1,16 @@
 package IntroToStacks;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class TextUndoRedo {
+	JFrame start = new JFrame();
+	JPanel next = new JPanel();
+	JLabel after = new JLabel();
 	/* 
 	 * Create a JFrame with a JPanel and a JLabel.
-	 * 
+
 	 * Every time a key is pressed, add that character to the JLabel. It should look like a basic text editor.
 	 * 
 	 * Make it so that every time the BACKSPACE key is pressed, the last character is erased from the JLabel.
