@@ -55,6 +55,7 @@ public class TextUndoRedo implements KeyListener {
 		after.setText(after.getText()+ "");
 		System.out.println("test" + after);
 		}*/
+		
 	if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
 
 
@@ -68,7 +69,10 @@ public class TextUndoRedo implements KeyListener {
 				
 			}
 			after.setText(s);
-		}else {
+		}else if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+			
+			}
+	else {
 			key.push(Character.toString(e.getKeyChar()));
 			String st = "";
 			for (int i = 0; i < key.size(); i++) {
