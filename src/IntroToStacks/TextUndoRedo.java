@@ -12,19 +12,21 @@ public class TextUndoRedo implements KeyListener {
 	JFrame start = new JFrame();
 	JPanel next = new JPanel();
 	JLabel after = new JLabel();
+	Stack<String> key = new Stack<String>();
 	public static void main(String[] args) {
+
 		TextUndoRedo tur = new TextUndoRedo();
-		Stack<String> key = new Stack<String>();
-	
+
+
 	}
 	TextUndoRedo(){
-		
-	start.setSize(400, 250);	
-	start.setVisible(true);
-	start.add(next);
-	next.add(after);
-	start.addKeyListener(this);
-	
+
+		start.setSize(400, 250);	
+		start.setVisible(true);
+		start.add(next);
+		next.add(after);
+		start.addKeyListener(this);
+
 	}
 	/* 
 	 * Create a JFrame with a JPanel and a JLabel.
@@ -41,29 +43,51 @@ public class TextUndoRedo implements KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-	//	after.add(e.getKeyChar());
-				 
-			 String Before = after.getText();
-				after.setText(Before + e.getKeyChar());
-		
+		//	after.add(e.getKeyChar());
+
+	
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-	/*	if (next == e.getSource()) {
+		/*	if (next == e.getSource()) {
 		after.getText();
 		after.setText(after.getText()+ "");
 		System.out.println("test" + after);
 		}*/
-		
+	if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+
+
+			key.pop();
+			//	key.pop();
+			String s ="";
+			for (int i = 0; i < key.size(); i++) {
+				s+= key.get(i);
+
+
+				
+			}
+			after.setText(s);
+		}else {
+			key.push(Character.toString(e.getKeyChar()));
+			String st = "";
+			for (int i = 0; i < key.size(); i++) {
+				st+= key.get(i);
+
+
+
+			}
+			after.setText(st);
+		}
+
+
+
 	}
-	
+
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-			System.out.println("test");
-		}
+
 	}
-	
+
 }
